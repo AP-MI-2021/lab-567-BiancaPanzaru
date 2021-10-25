@@ -19,8 +19,8 @@ def testStergeInventar():
     lista = adaugaInventar("2", "tableta", "vorbire", 1500, "Cluj", lista)
 
     lista = stergeInventar("1", lista)
-    assert getById("1") is None
-    assert getById("2") is not None
+    assert getById("1",lista) is None
+    assert getById("2", lista) is not None
 
 def testGetById():
     lista = []
