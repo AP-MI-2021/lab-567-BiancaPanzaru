@@ -51,7 +51,7 @@ def modificaInventar(id, nume, descriere, pret, locatie, lista):
     listaNoua = []
     for inventar in lista:
         if getId(inventar) == id:
-            inventarNou = creeazaInventar(id, nume, descriere, pret, locatie, lista)
+            inventarNou = creeazaInventar(id, nume, descriere, pret, locatie)
             listaNoua.append(inventarNou)
         else:
             listaNoua.append(inventar)
