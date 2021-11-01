@@ -7,6 +7,7 @@ def showAll(lista):
         print(toString(inventar))
 
 def main_line(lista):
+    print("scrieti ajutor (pt a vedea comenzile disponibile) sau dati comanda: ")
     while True:
         givenString = input()
         if givenString == "ajutor":
