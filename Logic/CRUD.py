@@ -12,7 +12,8 @@ def adaugaInventar(id, nume, descriere, pret, locatie, lista):
     :param lista: lista de inventare
     :return: o lista continand lista veche + noul obiect
     """
-
+    if getById(id, lista) is not None:
+        raise ValueError("Id-ul exista deja!")
     inventar = creeazaInventar(id, nume, descriere, pret, locatie)
     return lista + [inventar]
 
@@ -35,6 +36,8 @@ def stergeInventar(id, lista):
     :param lista:lista de obiecte din inventar
     :return: lista dupa ce a fost facuta modificarea
     """
+    if getById(id, lista) is None:
+        raise ValueError("Nu exista un inventar cu id-ul dat!")
     return [inventar for inventar in lista if getId(inventar) != id]
 
 def modificaInventar(id, nume, descriere, pret, locatie, lista):
@@ -48,6 +51,8 @@ def modificaInventar(id, nume, descriere, pret, locatie, lista):
     :param lista: lista de inventare
     :return: lista modificata
     """
+    if getById(id, lista) is None:
+        raise ValueError("Nu exista un inventar cu id-ul dat!")
     listaNoua = []
     for inventar in lista:
         if getId(inventar) == id:
@@ -56,5 +61,3 @@ def modificaInventar(id, nume, descriere, pret, locatie, lista):
         else:
             listaNoua.append(inventar)
     return listaNoua
-
-

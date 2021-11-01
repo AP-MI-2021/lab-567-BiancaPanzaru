@@ -8,6 +8,16 @@ def creeazaInventar(id, nume, descriere, pret, locatie):
     :param locatie: locatia obiectului - string
     :return:un dictionar ce retine un obiect din inventar
     """
+    if id == "" or nume == "" or descriere == "":
+        raise ValueError("Id-ul, Numele si descrierea trebuie sa fie nenule")
+    if pret is not None and not isinstance(pret, (float, int)):
+        raise ValueError("Pretul trebuie sa fie un numar")
+    if pret is None:
+        price = 0
+    if pret < 0:
+        raise ValueError("Pretul nu poate fi negativ")
+    if locatie is not None and len(locatie) != 4:
+        raise ValueError("Locatia trebuie sa fie formata doar din 4 caractere")
     return [id, nume, descriere, pret, locatie]
     """
     return {
