@@ -2,6 +2,7 @@ from Tests.testCRUD import testAdaugaInventar, testGetById, testModificaInventar
 from Tests.testDomain import testInventar
 from Tests.testFunctionalitati import testModificareLocatieInventare, testPretMax, testOrdonareDupaPretAchzitie, \
     testConcatSTringDescriere
+from Tests.testUndoRedo import test_Undo_Redo
 
 
 def runAllTests():
@@ -14,3 +15,4 @@ def runAllTests():
     testStergeInventar()
     testGetById()
     testModificaInventar()
+    test_Undo_Redo()

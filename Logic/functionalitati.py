@@ -58,7 +58,7 @@ def ordonareDupaPretAchizitie(lista):
     :param lista: lista de inventare
     :return: lista ordonata
     """
-    return sorted(lista, key= lambda inventar: getPret(inventar))
+    return sorted(lista, key=getPret)
 
 
 def sumaPreturiPerLocatie(lista):
